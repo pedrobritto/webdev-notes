@@ -1,5 +1,3 @@
-// v1.0
-
 // Todas as tags HTML são convertidas em JS pelo browser,
 // que por sua vez, podem ser SELECIONADOS e MANIPULADOS através de métodos .js
 // Tudo é armazenado em um objeto chamado document.
@@ -101,19 +99,29 @@ element.classList.toggle("classe");
 	p.innerHTML = "Eu posso usar <strong>tags</strong> aqui!";
 
 // getAttribute e setAttribute
-// utilizados para ler e escrever atributos existentes
+// utilizados para ler e escrever/modificar atributos HTML existentes
 
 	/*
 	<a href="http://www.google.com">Eu sou um link</a>
 	<img src="logo.png">
 	*/
 
-	// Para modificar o link
+	// Para modificar o link do exemplo acima
 	var link = document.querySelector("a");
 	link.getAttribute("href"); // retorna: http://www.google.com
-	link.setAttribute("href", "http://www.novoendereco.com");
+	link.setAttribute("href", "http://www.novaurl.com");
 
-	// Para modificar a origem da imagem
-	var imagem = document.querySelector("img");
+	// Para modificar a origem da imagem do exemplo acima
+	var imagem = document.querySelector("a");
 	imagem.getAttribute("src"); // retorna: logo.png
-	imagem.setAttribute("src", "www.link.com/da-nova-imagem.jpeg");
+	imagem.setAttribute("src", "www.url.com/novaimg.jpeg");
+	
+// Edições em massa
+	// Para fazer isso é preciso criar um loop que passa por todos os elementos do array.
+	// ex: alterar todas as imagens em um site:
+
+var img = document.querySelectorAll("img");
+// loop no array
+for (var i = 0; i < img.length; i++) {
+	img[i].setAttribute('src','//url.com/img.jpeg');
+}
