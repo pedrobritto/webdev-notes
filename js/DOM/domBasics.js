@@ -114,6 +114,6 @@ element.classList.toggle("classe");
 	link.setAttribute("href", "http://www.novoendereco.com");
 
 	// Para modificar a origem da imagem
-	var imagem = document.querySelector("a");
+	var imagem = document.querySelector("img");
 	imagem.getAttribute("src"); // retorna: logo.png
-	iamgem.setAttribute("src", "www.link.com/da-nova-imagem.jpeg");
+	imagem.setAttribute("src", "www.link.com/da-nova-imagem.jpeg");
