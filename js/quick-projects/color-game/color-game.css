@@ -1,0 +1,88 @@
+body {
+	background: #222;
+	color: white;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+	font-weight: 200;
+	text-transform: none;
+	text-align: center;
+
+	background: steelblue;
+	margin: 0;
+	padding: 30px 0;
+
+	transition: .2s ease-out;
+}
+
+.colorDisplay {
+	font-size: 3rem;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+#container {
+	/* define tamanho máximo do container */
+	max-width: 600px;
+	/* centraliza conainer na página */
+	margin: 10px auto;
+}
+
+#stripe {
+	background: white;
+	height: 30px;
+	color: black;
+}
+
+#message {
+	margin: auto;
+	font-weight: normal;
+	display: inline-block;
+	width: 28%;
+}
+
+.square {
+	/* faz o div ser visível */
+	/*background: steelblue;*/
+	width: 30%;
+	margin: 1.66%;
+	padding-bottom: 30%;
+
+	/* mostra os divs em linha */
+	float: left;
+
+	border-radius: 5px;
+
+	transition: .2s ease-out;
+}
+
+.btn-selected {
+	background: steelblue;
+	color: white;
+	transition: .2s ease-out;
+}
+
+button:hover {
+	background: steelblue;
+	color: white;
+}
+
+button {
+	background: none;
+	border: none;
+	outline: none;
+
+	height: 100%;
+	color: steelblue;
+
+	text-transform: uppercase;
+	font-weight: bold;
+
+	transition: .2s ease-out;
+	cursor: pointer;
+}
