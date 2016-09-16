@@ -1,6 +1,7 @@
 # **jQuery - o básico**
+Não utilize o conteúdo desse texto como material de estudo sério. Ele existe apenas como minhas notas pessoais de estudo e podem conter más práticas e seu conteúdo pode estar simplesmente errado.
 
-### Selecionando com jQuery
+### Selecionando DOM com jQuery
 Para selecionar elementos html com jQuery, utiliza-se ```$```, que funciona de forma equivalente ao ```document.querySelectorAll("seletor")``` do javaScript vanilla.
 
 Exemplo:
@@ -130,5 +131,13 @@ Análogo ao método js: `.classList.toggle("classe")`
 ## Eventos
 
 ### `.click()`
+```
+$("seletor").click(function({
+});
+```
+
 ### `.keypress()`
+
 ### `.on()`
+Equivalente a `.addEventListener("evento", function);`.
+Uso: `$("seletor").on("evento", function)`.
