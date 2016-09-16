@@ -135,9 +135,12 @@ Análogo ao método js: `.classList.toggle("classe")`
 $("seletor").click(function({
 });
 ```
+**Não consegue** escutar elementos que são criados dinamicamente após o carregamento da página.
 
 ### `.keypress()`
 
 ### `.on()`
-Equivalente a `.addEventListener("evento", function);`.
+Equivalente a `.addEventListener("evento", function)`.
 Uso: `$("seletor").on("evento", function)`.
+
+**Consegue** escutar elementos que são criados dinamicamente após o carregamento da página.
