@@ -1,0 +1,111 @@
+body {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	color: #222;
+	background: #eee;
+}
+
+h1 {
+	display: inline;
+	font-size: 2rem;
+	margin: 0;
+	width: auto;
+}
+
+#scoreP1, #scoreP2 {
+	font-size: 5rem;
+}
+
+#winnerScoreInput {
+	font-family: "Open Sans";
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-align: center;
+
+	border: 1px solid #eee;
+	border-radius: 3px;
+	outline: none;
+}
+
+.container {
+	padding: 2% 1%;
+	margin: 10px auto;
+	background: white;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+
+	min-width: 300px;
+	max-width: 300px;
+
+
+}
+
+.winner {
+	color: #5bc768;
+	transition: .2s ease-out;
+}
+
+button {
+
+	background: none;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+
+	margin-top: 2%;
+	padding: 5px 20px;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: white;
+
+	cursor: pointer;
+	transition: all .2s ease-out;
+}
+
+input {
+	min-width: 30px;
+	max-width: 40px;
+}
+
+#bo {
+	display: inline;
+	font-size:0.9rem;
+	font-weight: bold;
+}
+
+/*Button 1*/
+#buttonP1 {
+	width: 49%;
+	background: #ea564e;
+	border-bottom: 3px solid #ad352e;
+}
+
+#buttonP1:hover {
+	background: #ad352e;
+}
+
+/*Button 2*/
+#buttonP2 {
+	width: 49%;
+	background: #4e7eea;
+	border-bottom: 3px solid #2d53a7;
+}
+
+#buttonP2:hover {
+	background: #2d53a7;
+}
+
+/*Reset Button*/
+#reset {
+	background: #e6a734;
+	border-bottom: 3px solid #bd841b;
+	width: 100%;
+}
+
+#reset:hover {
+	background: #bd841b;
+}
