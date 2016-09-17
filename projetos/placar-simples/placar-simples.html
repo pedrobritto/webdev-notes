@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Placar Simples</title>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="placar-simples.css">
+</head>
+<body>
+
+<div class="container">
+	<p style="font-size:0.8rem">O incrível placar</p>
+	<h1><span id="scoreP1">0</span> x <span id="scoreP2">0</span></h1>
+	<div id="message"></div>
+
+	<div id="bo">Jogando por uma melhor de <input type="number" min="0" id="winnerScoreInput"></div><!-- 
+	<div><input type="number" min="0" id="winnerScoreInput"></div> -->
+
+	<div class="botoes">
+		<button id="buttonP1">P1 +</button>
+		<button id="buttonP2">P2 +</button>
+	</div>
+	<div class="botoes">
+		<button id="reset">Reset</button>
+	</div>
+</div>
+
+<script type="text/javascript" src="placar-simples.js"></script>
+</body>
+</html>
