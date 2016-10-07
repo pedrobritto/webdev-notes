@@ -103,7 +103,7 @@ $("#foto").attr({
 Lê ou escreve um valor de um elemento HTML. Exemplo:
 ```
 <input type="text" value="Texto que eu escrevi">
-$("input").val(""); // retorna "Texto que eu escrevi"
+$("input").val(); // retorna "Texto que eu escrevi"
 $("input").val("Texto novo"); // modifica "Texto que eu escrevi" para "Texto novo"
 
 ```
