@@ -1,4 +1,4 @@
-# APIs - Introdução
+# APIs
 
 APIs (Application Program Interface) é um meio de possibilitar troca de informações entre programas distintos.
 
