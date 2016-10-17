@@ -1,0 +1,10 @@
+<!-- display search results -->
+
+<h1>Search Results</h1>
+
+<!--dispĺay Titles from search results from search.ejs -->
+<ul>
+  <% data["Search"].forEach (function (movie) { %>
+    <li><%= movie["Title"] %></li>
+  <% }) %>
+</ul>
