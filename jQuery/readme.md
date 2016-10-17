@@ -5,11 +5,12 @@ Não utilize o conteúdo desse texto como material de estudo sério. Ele existe 
 Para selecionar elementos html com jQuery, utiliza-se ```$```, que funciona de forma equivalente ao ```document.querySelectorAll("seletor")``` do javaScript vanilla.
 
 Exemplo:
+
 ``` js
-$("p")           equivale a: document.getElementsByTagName("p")
-$("div p")      equivale a: document.querySelectorAll("div p")
-$(".classe")    equivale a: document.getElementsByClassName("classe")
-$("#id")        equivale a: document.getElementById("id")
+$("p")          // equivale a: document.getElementsByTagName("p")
+$("div p")      // equivale a: document.querySelectorAll("div p")
+$(".classe")    // equivale a: document.getElementsByClassName("classe")
+$("#id")        // equivale a: document.getElementById("id")
 ```
 ### Manipulando DOM com jQuery
 
