@@ -67,7 +67,10 @@ for (var i = 0; i < p.lenght; i++) {
 ### `.text()`
 O método `.text()` é análogo ao método `.textContent = ""` do js. Utilizar `$("p").text();` retornará uma string com o texto contido em `p`.
 
-Também pode-se utilizar esse mesmo método para substtituir o texto em `$("p")`, bastanto por o novo texto como argumento do método: `$("p").text("O novo texto vem aqui e substitui todo o texto antigo");`
+Também pode-se utilizar esse mesmo método para substtituir o texto em `$("p")`, bastanto por o novo texto como argumento do método: 
+```js
+$("p").text("O novo texto vem aqui e substitui todo o texto antigo");
+```
 
 Não processa tags HTML como tais, e sim como strings.
 
@@ -75,8 +78,8 @@ Não processa tags HTML como tais, e sim como strings.
 O método `.html()` é análogo ao método `.innerHTML = ""` do js. Utilizar `$("p").html();` retornará uma string com o código HTML contido em `p`.
 
 Também pode-se utilizar esse mesmo método para substtituir o HTML em `$("p")`, bastanto por o novo código HTML como argumento do método:
-```js
-$("p").text("Vou trocar o texto por uma lista contendo 2 elementos:
+```
+$("p").html("Vou trocar o texto por uma lista contendo 2 elementos:
   <ul>
     <li>Zero</li>
     <li>Um</li>
