@@ -5,7 +5,7 @@ Não utilize o conteúdo desse texto como material de estudo sério. Ele existe 
 Para selecionar elementos html com jQuery, utiliza-se ```$```, que funciona de forma equivalente ao ```document.querySelectorAll("seletor")``` do javaScript vanilla.
 
 Exemplo:
-```
+``` js
 $("p")           equivale a: document.getElementsByTagName("p")
 $("div p")      equivale a: document.querySelectorAll("div p")
 $(".classe")    equivale a: document.getElementsByClassName("classe")
@@ -22,19 +22,19 @@ Uma das vantagens de se utilizar o jQuery é que não é preciso criar uma vari�
 #### Exemplo: Alterar a cor de todos os elementos `p`
 
 javaScript:
-```
+```js
 var p = document.querySelectorAll("p");
 for (var i = 0; i < p.length; i++) {
   p[i].style.color = "red";
 }
 ```
 jQuery:
-```
+```js
 $("p").css("color","red");
 ```
 
 Também é possível utilizar um objeto contendo várias propriedades com jQuery
-```
+```js
 var styles = {
 	color: "red",
 	background: "blue",
@@ -42,18 +42,18 @@ var styles = {
 };
 ```
 E então utiliza-lo como argumento:
-```
+```js
 $("p").css(styles);
 ```
 Para fazer o mesmo com js:
-```
+```js
 var p = document.querySelector("p");
 p.style.color = "red";
 p.style.background = "blue";
 p.style.border = "2px solid green";
 ```
 Caso fosse utilizado `document.querySelectorAll("")` ou outros métodos que retornassem um conjunto de elementos, seria preciso utilizar um loop.
-```
+```js
 var p = document.querySelectorAll("p");
 for (var i = 0; i < p.lenght; i++) {
 	p[i].style.color = "red";
@@ -75,7 +75,7 @@ Não processa tags HTML como tais, e sim como strings.
 O método `.html()` é análogo ao método `.innerHTML = ""` do js. Utilizar `$("p").html();` retornará uma string com o código HTML contido em `p`.
 
 Também pode-se utilizar esse mesmo método para substtituir o HTML em `$("p")`, bastanto por o novo código HTML como argumento do método:
-```
+```js
 $("p").text("Vou trocar o texto por uma lista contendo 2 elementos:
   <ul>
     <li>Zero</li>
@@ -86,13 +86,13 @@ Processa tags HTML.
 
 ### `.attr()`
 Lê ou escreve um atributo de um elemento HTML. Exemplo:
-```
+```js
 <img id="foto" src="/cachorro.png" title="um cachorrinho bonito">
 $("#foto").attr("title"); // retorna "um cachorrinho bonito"
 $("#foto").attr("title","um filhote de beagle") // modifica 'title' para "um filhote de beagle"
 ```
 Pode-se alterar vários atributos da seguinte forma:
-```
+```js
 $("#foto").attr({
   title: "um gatinho",
   src: "/gato.png",
@@ -101,7 +101,7 @@ $("#foto").attr({
 
 ### `.val()`
 Lê ou escreve um valor de um elemento HTML. Exemplo:
-```
+```js
 <input type="text" value="Texto que eu escrevi">
 $("input").val(); // retorna "Texto que eu escrevi"
 $("input").val("Texto novo"); // modifica "Texto que eu escrevi" para "Texto novo"
@@ -131,7 +131,7 @@ Análogo ao método js: `.classList.toggle("classe")`
 ## Eventos
 
 ### `.click()`
-```
+```js
 $("seletor").click(function({
 });
 ```
