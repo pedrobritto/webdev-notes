@@ -49,5 +49,13 @@ Unidade relativa. É semelhante à unidade `em`, mas em vez de ser afetada por q
 https://snook.ca/archives/html_and_css/font-size-with-rem
 
 ## Fonts
-Gerador de font stcak. http://www.cssfontstack.com/
+Font stack é um conjunto de fontes que é utilizada em ordem de disponibilidade na máquina do cliente. Se a primeira não estiver disponível, a segunda tentará ser utilizada, etc. Ex:
+
+``` css
+p {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+```
+
+Gerador de font stack. http://www.cssfontstack.com/
 Sobre line-heigth: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
