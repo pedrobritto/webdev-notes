@@ -1,4 +1,4 @@
-# CSS Basics
+# O básico do CSS
 
 ### CSS Rule
 
@@ -139,3 +139,102 @@ Para consertar isso, podemos utilizar um [float clearfix](http://nicolasgallaghe
   clear: both;
 }
 ```
+
+## CSS3 features
+### Gradients
+
+ ``` css
+ /* Gradientes lineares ------------------ */
+ /* (color, color) */
+ background-image: linear-gradient(steelblue, firebrick);
+ /* (direction, color stop, color stop) */
+ background-image: linear-gradient(to left, steelblue 0%, firebrick 100%);
+ /* (direction (angle), color, color, color) */
+ background-image: linear-gradient(45deg, red, gree, blue);
+
+ /* Gradientes radiais ------------------ */
+ /* (color, color) */
+ background-image: radial-gradient(steelblue, firebrick);
+ /* (force circle, color stop, color stop) */
+ background-image: radial-gradient(circle, steelblue 0%, firebrick 75%);
+ /* (force circle and set origin to top right, color stop, color stop, color stop) */
+ background-image: radial-gradient(circle at top right, steelblue, firebrick, #C01102);
+ ```
+
+ É possível utilizar transparência e várias camadas de gradientes:
+
+ ```css
+background: linear-gradient(steelblue, transparent),
+            /* quantos gradientes quiser */
+            /* #444 url('../path/img.jpeg') no-repeat center */;
+```
+
+Os valores são separados por vírgula e renderizados de cima para baixo.
+
+### Media Queries
+
+``` css
+@media (max-width: 960px) {
+  /* rules */
+}
+
+@media (min-width: 460px;) { /* rules */ }
+@media screen and (min-width: 500px) { /* rules */ }
+@media (min-width: 460px) and (max-width: 960px) { /* rules */ }
+```
+`min-width`. Afeta viewports maiores que o valor fornecido. <br>
+`max-width`. Afeta viewports menores que o valor fornecido.
+
+Mais informações sobre [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries).
+
+OBS: Por conta da forma que browsers mobile renderizam viewports, é preciso utilizar o seguinte código HTML para garantir que as medias queries sejam aplicadas corretamente e não apresentem problemas de zoom:
+
+``` html
+<!-- opção 1 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- opção 2 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+```
+
+Mais sobre isso [aqui](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) e [aqui](https://css-tricks.com/probably-use-initial-scale1/).
+
+## Sobre Cascading
+
+1. Regras aplicadas por último tem prioridade.
+2. Regras mais específicas tem mais prioridade (estilo inline > id > class > elemento).
+
+Exemplo 1:
+
+``` css
+p {
+  color: blue;
+}
+
+p {
+  color: red;
+  color: green; /* será aplicado */
+}
+
+```
+
+Exemplo 2:
+
+``` html
+<!-- se existir um estilo inline, ele terá prioridade sobre todos -->
+<p id="texto" class="texto">(...)</p>
+
+<style>
+  #texto { color: blue; }   /* prioridade 1 - aplicado */
+  .texto { color: red; }    /* prioridade 2 */
+  p { color: green; }       /* prioridade 3 */
+</style>
+```
+
+## Dicas de projetos
+- Create new subpages for the Lake Tahoe website
+- Build a single-page website for your favorite city
+- Build a small website component, like a header, navigation, or form
+- Redesign the website of your favorite local restaurant or band
+- Design a website for a local non-profit organization
+- Learn how to refactor the Lake Tahoe website with Sass in our new course CSS to Sass
