@@ -64,11 +64,11 @@ Tipos principais:
 
 `none`. O elemento não é renderizado pelo browser.
 
-`inline`. Ocupam apenas o espaço necessário. Valor padrão dos elementos `span`, `a`, `img`, `strong` e [outros](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements). Não aceitam configurações de `padding` ou `margin`.
+`inline`. Ocupam apenas o espaço necessário. Valor padrão dos elementos `span`, `a`, `img`, `strong` e [outros](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements). Não aceitam configurações de `padding` ou `margin` verticais, nem `heigth` ou `width`.
 
 `block`. Ocupam 100% do espaço horizontal em que se encontram, forçando uma quebra de linha antes e depois deste tipo de elemento. Valor padrão dos elementos `h1` e afins, `div`, `p`, `ul`, e [outros](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
 
-`inline-block`. Elementos híbridos que aceitam configuração de `padding` e `margin`, mas não ocupam todo o espaço horizontal em uma linha, podendo coexistir nela com outros elementos sem necessidade de `float`. Os únicos elementos `inline-block` no Chrome são `input`, `button`, `textarea` e `select`.
+`inline-block`. Elementos híbridos que aceitam configuração de `padding` e `margin` como em elementos `block`, mas não ocupam todo o espaço horizontal em uma linha, podendo coexistir nela com outros elementos sem necessidade de `float`. Os únicos elementos `inline-block` no Chrome são `input`, `button`, `textarea` e `select`.
 
 ### Font Stack
 Font stack é um conjunto de fontes que é utilizada em ordem de disponibilidade na máquina do cliente. Se a primeira não estiver disponível, a segunda tentará ser utilizada, etc. Ex:
