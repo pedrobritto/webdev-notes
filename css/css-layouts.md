@@ -124,7 +124,6 @@ Notas:
 - Elementos com float ficam adjacentes entre si, independente de espaços em branco.
 
 ### Float vs inline-block - Qual usar?
-
 Quando usar `inline-block`:
 - Organizar um menu de navegação.
 - Criar um layout simples de 2 colunas.
@@ -133,3 +132,62 @@ Quando usar `inline-block`:
 Quando usar `float`:
 - Quando quiser que o elemento saia do fluxo ou tenha conteúdo ao seu redor, como imagens à esquerda ou direita.
 - Outras situações.
+
+### Posicionando elementos na página
+
+- [Documentação MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+- [CSS positioning 101 - Noah Stokes](http://alistapart.com/article/css-positioning-101)
+- [Position - CSS Tricks](https://css-tricks.com/almanac/properties/p/position/)
+
+#### `absolute` e `relative`
+Elementos com `position: absolute` não afetam, nem são afetados por outros elementos na página. É como se estivem uma camada acima dos outros elementos sem essa regra de posicionamento.
+
+``` css
+.class {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  bottom: 3.125em;
+  left: 5%;
+}
+```
+Elementos `absolute` são posicionados em relação ao elemento pai mais próximo que contenha `position: relative`.
+
+Quando não há nenhum elemento com esse posicionamento, o contexto de posicionamento passa a ser o padrão, que é o da `viewport`.
+
+Então se quiser posicionar um elemento com a classe `.class` em relação a um elemento pai de classe `.main-header`, por exemplo, basta adicionar a ele a propriedade `position: relative`.
+
+``` css
+.main-header {
+  position: relative;
+}
+```
+*Nota: aparentemente a propriedade `position: relative` não afeta o elemento que a recebe e serve apenas de "âncora" para elementos com o valor `absolute`.*
+
+#### `fixed`
+Excelente para criar menus de navegação fixos!
+
+Exemplo de código:
+
+``` css
+.main-header {
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  top: 0;
+  z-index: 1000;
+}
+
+body {
+  padding-top: 68px; /* do tamanho do menu */
+}
+```
+
+#### Sobre `z-index`
+A prioridade de posicionamento dos elementos tem a ver com a ordem em que aparecem no código fonte. Quem aparece por último tem prioridade sobre os demais.
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+- https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+- https://css-tricks.com/almanac/properties/z/z-index/
