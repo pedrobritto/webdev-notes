@@ -8,9 +8,11 @@
 }
 ```
 
+## Propriedades Flex Container
+
 ### Direção do conteúdo: `flex-direction`
 - [Flex direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)
-Propriedade exclusiva do flex container.
+- Propriedade **flex container**.
 
 
 O valor padrão é `row`.
@@ -25,8 +27,7 @@ O valor padrão é `row`.
 
 ### Quebra de linha: `flex-wrap`
 - [Flex wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap)
-
-Propriedade exclusiva do flex container.
+- Propriedade **flex container**.
 
 ``` css
 .class {
@@ -38,7 +39,7 @@ Propriedade exclusiva do flex container.
 
 ### Posicionamento dos itens: `justify-content`
 - [Documentação MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
-Propriedade exclusiva do flex container.
+- Propriedade **flex container**.
 
 
 ``` css
@@ -48,11 +49,11 @@ Propriedade exclusiva do flex container.
   /* center | flex-end | flex-start* | space-around | space-between */
 }
 ```
+## Propriedades Flex Item
 
 ### Ordem dos elementos: `order`
 - [Documentação MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/order)
-
-Propriedade exclusiva de um flex item.
+- Propriedade **flex item**.
 ``` css
 .item-x {
   order: 0 ;
@@ -62,8 +63,7 @@ Propriedade exclusiva de um flex item.
 ### Preenchimento de espaço vazio: `flex-grow`
 - [Documentação MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow)
 - [CSS-Tricks](https://css-tricks.com/flex-grow-is-weird/)
-
-Propriedade exclusiva de um flex item.
+- Propriedade **flex item**.
 
 flex-grow determines how much of the available space inside the flex container an item should take up; it assigns more or less space to flex items.
 
@@ -76,8 +76,7 @@ flex-grow determines how much of the available space inside the flex container a
 
 ### Tamanho mínimo de um item: `flex-basis`
 - [documentação MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)
-
-Propriedade exclusiva de um flex item.
+- Propriedade **flex item**.
 
 Define o tamanho mínimo de um flex item.
 
@@ -90,8 +89,7 @@ Define o tamanho mínimo de um flex item.
 
 ### `flex` shorthand
 - [documentação MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
-
-Propriedade exclusiva de um flex item.
+- Propriedade **flex item**.
 
 Define o tamanho mínimo de um flex item.
 
@@ -102,16 +100,18 @@ Define o tamanho mínimo de um flex item.
 }
 ```
 
+## Propriedade Mista
+
 ### Alinhamento vertical (cross axis)
 #### `align-items`
 - [Documentação MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
 
-`align-items` é uma propriedade exclusiva do flex container. É responsável pelo alinhamento vertical (cross axis) de todos os flex items dentro dele.
+`align-items` é uma propriedade **flex container**. É responsável pelo alinhamento vertical (cross axis) de todos os flex items dentro dele.
 
 #### `align-self`
 - [Documentação MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)
 
-`align-self` é uma propriedade exclusiva do flex item. É responsável pelo alinhamento vertical (cross axis) do flex item especificado.
+`align-self` é uma propriedade **flex item**. É responsável pelo alinhamento vertical (cross axis) do flex item especificado.
 
 #### Valores possíveis
 
