@@ -1,0 +1,111 @@
+/* --------------------------
+  Base
+--------------------------- */
+
+body {
+  background: #8069a1;
+  padding-top: 60px;
+}
+
+svg {
+	margin: auto;
+  display: block;
+}
+
+/* --------------------------
+  Keyframes
+--------------------------- */
+
+.badge * { transform-origin: 50% 50%; }
+
+/* Badge Grow animation */
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  
+  30% {
+    transform: scale(1.1);
+  }
+  
+  60% {
+    transform: scale(0.9);
+  }
+}
+
+/* Star Turn animation */
+
+@keyframes turn {
+  0% {
+    transform: rotate(0) scale(0);
+    opacity: 0;
+  }
+  
+  60% {
+    transform: rotate(375deg) scale(1.1);
+  }
+  
+  80% {
+    transform: rotate(355deg) scale(0.9);
+  }
+  
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Star pulsating dots animation */
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.2);
+  }
+
+}
+
+/* --------------------------
+  SVG Styles
+--------------------------- */
+
+/* Grow animation*/
+
+.badge-outer,
+.badge-inner,
+.badge-inline {
+  animation: grow 1s ease-out backwards;
+}
+
+.badge-inner {
+  animation-delay: .1s;
+}
+
+.badge-inline {
+  animation-delay: .15s;
+}
+
+/* Turn animation */
+
+.badge-star {
+  animation: turn 1.1s .2s ease-out backwards;
+}
+
+/* Pulse animation */
+
+.badge-star circle {
+  animation: pulse .7s 1.1s backwards;
+}
+
+.badge-star circle:nth-of-type(5) { animation-delay: 1.6s; }
+.badge-star circle:nth-of-type(2) { animation-delay: 1.7s; }
+.badge-star circle:nth-of-type(3) { animation-delay: 1.8s; }
+.badge-star circle:nth-of-type(4) { animation-delay: 1.9s; }
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+/* ================================= 
+  Photo Overlay Transitions
+==================================== */
+
+.photo-overlay {
+	opacity: 0;
+	transition: opacity .5s;
+}
+.photo-overlay:hover {
+	opacity: 1;
+}
+
+/* ================================= 
+  Button Transitions
+==================================== */
+
+.button {
+	transition: background .3s, color .3s;
+}
+.button:hover {
+	color: #fff;
+	background: #4a89ca;
+}
+
+/* ================================= 
+  Image Transforms & Transitions
+==================================== */
+
+/* -- Row 1 --------- */
+
+img {
+  transition: transform .4s cubic-bezier(0.6, 1.5, 0.6, 1);
+}
+
+img:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* -- Row 2 --------- */
+
+.photo:hover img {
+  transform: scale(1.1);
+}
+
+/* -- Row 3 --------- */
+
+.slide .photo-overlay, 
+.slide img {
+  transition: transform 0.5s ease;
+}
+
+.slide .photo-overlay {
+  transform: translateX(-100%);
+}
+
+.slide:hover .photo-overlay {
+  transform: translateX(0);
+}
+
+.slide img {
+  transform: translateX(0);
+}
+
+.slide:hover img {
+  transform: translateX(100%);
+}
+
+/* -- Logo ---------- */
+
+.logo:hover {
+	transform: rotate(-20deg);
+}

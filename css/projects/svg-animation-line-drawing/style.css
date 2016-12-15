@@ -1,0 +1,43 @@
+/* --------------------------
+  Keyframes
+--------------------------- */
+
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0; /* Must be animated back to 0 */
+  }
+}
+
+@keyframes fill-it {
+  100% {
+    fill: #6FBC6D;
+    stroke-width: 0;
+  }
+}
+
+
+/* --------------------------
+  SVG Styles
+--------------------------- */
+
+svg {
+	display: block;
+	margin: 2em auto 0;
+	width: 40%;
+}
+
+.logo {
+  stroke: #6FBC6D;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  
+  stroke-dasharray: 810; /* Same as path total lenght*/
+  stroke-dashoffset: 810 /* Same as stroke-dasharray */;
+  
+  animation: offset 4s linear forwards,
+             fill-it 1.2s 4s forwards;
+}
+
+
+

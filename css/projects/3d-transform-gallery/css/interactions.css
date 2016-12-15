@@ -1,0 +1,51 @@
+/* ================================= 
+  Button Transitions
+==================================== */
+
+.button {
+	transition: background .3s;
+}
+.button:hover {
+	background: rgba(74,137,202, 1);
+}
+
+/* ================================= 
+  Photo 3D Transforms & Transitions
+==================================== */
+
+.content {
+/* Enables 3D transformations inside .content */
+  perspective: 1000px;
+}
+
+.photo {
+  transition: transform .7s ease;
+  /* Makes child elements preserve 3d space */
+  transform-style:preserve-3d;
+}
+
+.photo:hover {
+  /* .photo elements rotates 180deg on the X axis */
+  transform: rotateX(180deg);
+}
+
+.side-a {
+  /* Hiddes images when fliped */
+  backface-visibility: hidden;
+}
+
+.side-b {
+  /* Makes back side show correctly */
+  transform: rotateX(180deg);
+}
+
+
+/* -- Logo ------ */
+
+.logo {
+  transition: transform .3s ease;
+}
+
+.logo:hover {
+  transform: rotate(-10deg);
+}
