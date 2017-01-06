@@ -1,18 +1,18 @@
-# git basics
-
-## Parte 1
+# git Basics
 
 Para obter ajuda sobre um comando:
 ```
 git help <comando>
 ```
 
-Em um diretorio:
+## Parte I
+
+Para inicializar um respositório em um diretório basta executar o seguinte comando:
 ```
 git init
 ```
 
-Declarações iniciais:
+Algumas declarações iniciais úteis:
 ```
 git config --global user.name "user name"
 git config --global user.mail email@host.com
@@ -28,7 +28,7 @@ git status
 Ele ira retornar quaisquer alterações de arquivos dentro do diretório do repositório,
  como novos arquivos, arquivos removidos e arquivos modificados.
 
-Para rastrear/adicionar/(to stage) um arquivo:
+Para rastrear/adicionar/(to stage) um arquivo é possível utilizar:
 ```
 git add file.ext
 git add *.ext
@@ -41,12 +41,14 @@ Para fazer um commit:
 git commit -m "Descrição curta do commit"
 ```
 
-Para ver o log de alterações de commits:
+o `-m` é uma flag para adicinar um comentário ao commit.
+
+Para ver o log dos commits já feitos:
 ```
 git log
 ```
 
-## Parte 2
+## Parte II
 
 Ver as modificações feitas no arquivo:
 ```
@@ -54,7 +56,7 @@ git diff
 git diff --staged
 ```
 
-Unstage:
+Para fazer um Unstage:
 ```
 git reset HEAD FILENAME
 ```
