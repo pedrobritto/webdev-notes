@@ -1,0 +1,119 @@
+server {
+	listen 80 ;
+	listen 443 ssl http2 default_server;
+#	listen [::]:80 default_server ipv6only=on;
+
+	server_name hammergaming.com.br;
+
+	# include w3tc config
+	include /srv/www/hammergaming/html/nginx.conf;
+
+	# ssl path
+#	ssl on;
+	ssl_certificate /home/pedro/ssl/hammergaming.com.br.chained.crt;
+	ssl_certificate_key /home/pedro/ssl/hammergaming.com.br.key;
+
+	# webserver root path
+	root /srv/www/hammergaming/html/;
+        index index.php index.html index.htm;
+
+	## Blocks blacklisted referers @ /etc/nginx/spam-referral.conf
+	if ($bad_referer) {
+		return 444;
+	}
+
+	# very important, php won't work without this - it sets a bunch of the server values that it expects
+	include fastcgi_params;
+
+	# enables permalinks
+        location / {
+		try_files $uri $uri/ /index.php?q=$uri&$args;
+#		try_files $uri $uri/ /index.php?$args;
+       	}
+
+	error_page 404 /custom_404.html;
+        location = /custom_404.html {
+                root /usr/share/nginx/html;
+                internal;
+        }
+
+        error_page 500 502 503 504 /custom_50x.html;
+        location = /custom_50x.html {
+                root /usr/share/nginx/html;
+		internal;
+        }
+
+        location ~ \.php$ {
+                try_files $uri =404;
+
+                fastcgi_index index.php;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		# fastcgi_pass 127.0.0.1:9000;
+                fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+                include fastcgi_params;
+
+#		fastcgi_buffer_size 128k;
+#		fastcgi_buffers 256 16k;
+#		fastcgi_busy_buffers_size 256k;
+#		fastcgi_temp_file_write_size 256k;
+#		fastcgi_read_timeout 240;
+
+		}
+
+	# sends /status request to php
+	location /status {
+		fastcgi_pass php; }
+
+	# sends /ping request to php
+	location /ping {
+		fastcgi_pass php; }
+
+	## Gzip configs are set at /etc/nginx/conf.d/gzip.conf
+
+        ## Static Resources Cache:
+
+        location ~* .(svg|svgz|eot|otf|woff|mp4|ttf|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+                access_log off;
+                log_not_found off;
+                add_header Pragma public;
+                add_header Cache-Control "public";
+                expires 30d; }
+
+        location ~* .(php)$ {
+                access_log on;
+                log_not_found on;
+                add_header Pragma public;
+                add_header Cache-Control "public";
+	}
+
+	location ~ \.(html|htm|rtf|rtx|svg|svgz|txt|xsd)$ {
+		expires 3600s;
+		add_header Pragma "public";
+		add_header Cache-Control "max-age=3600, public"; }
+
+	## Blocking access to config files:
+	location ~ /(wp-config.php|readme.html|licence.txt) {
+		deny all; }
+
+	## Block access to xmlrpc.php to avoid DDoS attacks
+	location = /xmlrpc.php {
+        	deny all; }
+
+	## Information disclosure:
+	server_tokens off;
+	server_name_in_redirect off;
+
+	# Yoast sitemap:
+	location ~ ([^/]*)sitemap(.*)\.x(m|s)l$ {
+		## this redirects sitemap.xml to /sitemap_index.xml
+		rewrite ^/sitemap\.xml$ /sitemap_index.xml permanent;
+
+		## this makes the XML sitemaps work
+	        rewrite ^/([a-z]+)?-?sitemap\.xsl$ /index.php?xsl=$1 last;
+		rewrite ^/sitemap_index\.xml$ /index.php?sitemap=1 last;
+		rewrite ^/([^/]+?)-sitemap([0-9]+)?\.xml$ /index.php?sitemap=$1&sitemap_n=$2 last;
+	}
+
+}
