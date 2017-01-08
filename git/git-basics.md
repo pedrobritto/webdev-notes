@@ -73,13 +73,10 @@ $ git push
 Caso o repositório não tenha sido clonado e precise ser enviado para um repositório remoto, como o GitHub, é preciso criar uma origin com através do comando:
 
 ```
-<<<<<<< HEAD
-// git remote add <name> <url>
-$ git remote add origin https://github.com/user/repository-name.git
-=======
+
 # git remote add <name> <url>
-$ git remote add origin https://github.com/user/respository.git
->>>>>>> a524f4cc6759452864aed969b435f7bb58f62373
+$ git remote add origin https://github.com/user/repository-.git
+
 ```
 
 ### Branches
