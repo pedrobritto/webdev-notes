@@ -70,10 +70,11 @@ a flag `-u` serve para guardar os dados, então a partir do segundo push, basta 
 $ git push
 ```
 
-Caso o repositório não tenha sido clonado, é preciso criar uma origin através do comando:
+Caso o repositório não tenha sido clonado e precise ser enviado para um repositório remoto, como o GitHub, é preciso criar uma origin com através do comando:
 
 ```
-$ git remote add <name> <url>
+// git remote add <name> <url>
+$ git remote add origin https://github.com/user/repository-name.git
 ```
 
 ### Branches
