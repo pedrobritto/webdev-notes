@@ -73,7 +73,8 @@ $ git push
 Caso o repositório não tenha sido clonado, é preciso criar uma origin através do comando:
 
 ```
-$ git remote add <name> <url>
+# git remote add <name> <url>
+$ git remote add origin https://github.com/user/respository.git
 ```
 
 ### Branches
@@ -83,7 +84,7 @@ Branches são muito úteis para trabalhar com código sem fazer nenhuma alteraç
 #### Criando Branches
 
 ```
-// git branch <branch>
+# git branch <branch>
 $ git branch new_branch
 
 ```
