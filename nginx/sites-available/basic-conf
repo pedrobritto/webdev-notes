@@ -1,20 +1,17 @@
 server {
-	listen 80 ;
+	listen 80;
 	listen 443 ssl http2 default_server;
 #	listen [::]:80 default_server ipv6only=on;
 
-	server_name hammergaming.com.br;
-
-	# include w3tc config
-	include /srv/www/hammergaming/html/nginx.conf;
+	server_name domain.tld;
 
 	# ssl path
 #	ssl on;
-	ssl_certificate /home/pedro/ssl/hammergaming.com.br.chained.crt;
-	ssl_certificate_key /home/pedro/ssl/hammergaming.com.br.key;
+	ssl_certificate /path/to/key.chained.crt;
+	ssl_certificate_key /path/to/key.key;
 
 	# webserver root path
-	root /srv/www/hammergaming/html/;
+	root /path/to/root/;
         index index.php index.html index.htm;
 
 	## Blocks blacklisted referers @ /etc/nginx/spam-referral.conf
