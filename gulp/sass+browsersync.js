@@ -14,7 +14,7 @@ var input		= './app/sass/main.sass',
 // General Tasks
 gulp.task('sass', function() {
 	return gulp.src(input)
-	.pipe(sass({outputStyle: 'expanded'}))
+	.pipe(sass({outputStyle: 'expanded'}).on('error', logError))
 	.pipe(gulp.dest(output))
 	.pipe(browserSync.reload({
 		stream: true
