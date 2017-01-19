@@ -1,3 +1,5 @@
-# Webdev Intro
-Notas e códigos sobre webdev.<br>
-Apenas ara minha futura referência e fixação do conteúdo. Se for útil pra algúem, ótimo!
+# Desenvolvimento web - Notas introdutórias
+
+Códigos e exemplos citados na Wiki.
+
+[Clique aqui](https://github.com/pedrobritto/webdev-notes/wiki) para ver todas as notas.
