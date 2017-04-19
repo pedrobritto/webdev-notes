@@ -1,0 +1,2 @@
+- http://www.gourmandisebrasil.com/
+- https://stripe.com/us/pricing
