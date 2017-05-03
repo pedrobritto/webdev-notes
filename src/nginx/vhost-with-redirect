@@ -1,0 +1,35 @@
+## Redirects http www to http non-www 
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name www.example.com.br example.com.br;
+  return 301 https://example.com.br$request_uri;
+}
+
+## Redirects https www to https non-www
+server {
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2;
+
+  ssl_certificate /path/to/key.ext;
+  ssl_certificate_key /path/to/key.ext;
+  include snippets/ssl-params.conf;
+
+  server_name www.atomdesign.com.br;
+  return 301 https://atomdesign.com.br$request_uri;
+}
+
+
+server {
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2;
+
+  server_name atomdesign.com.br;
+
+  ssl_certificate /path/to/key.ext;
+  ssl_certificate_key /path/to/key.ext;
+  include snippets/ssl-params.conf;
+
+  ## Server definitions
+}
