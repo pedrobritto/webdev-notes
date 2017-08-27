@@ -1,0 +1,59 @@
+<section id="sports">
+  <p class="swim">Swim</p>
+  <p id="bike">Bike</p>
+  <p>Run</p>
+</section>
+
+<ul class="list">
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+</ul>
+
+<div>
+  <a href="https://pedrobritto.com" class="prevent-this">Prevent This</a>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+  var sports = document.querySelector('#sports');
+  var swim = document.querySelector('.swim');
+  var bike = document.querySelector('#bike');
+
+  var $preventThis = document.querySelector('.prevent-this');
+  $preventThis.addEventListener('click', function(e) {
+    e.preventDefault();
+    console.log(e.defaultPrevented);
+    console.log('prevented!');
+  });
+
+  var $ul = document.querySelector('.list');
+  var $li = document.querySelector('.list li');
+
+  $ul.addEventListener('click', function(e) {
+    console.log('UL');
+    console.log(e.target);
+    console.log(e);
+  }, false);
+
+  $li.addEventListener('click', function(e) {
+    console.log('LI');
+    console.log(e.target);
+    console.log(e);
+  }, false);
+
+
+  function highlight(event) {
+    event.target.classList.toggle('highlight')
+}
+
+  $ul.addEventListener('click', function(e) {
+    e.target.style.backgroundColor = 'red';
+  });
+
+</script>

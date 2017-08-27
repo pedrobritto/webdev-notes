@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Search</title>
+  </head>
+  <body>
+    <form name="search" action="search">
+      <input type="text" name="searchBox">
+      <button type="submit">Search</button>
+    </form>
+
+    <script type="text/javascript">
+
+      var form   = document.forms.search;
+      var input1 = form.elements[0];
+
+      form.addEventListener('submit', search, false);
+
+      // function search(e) {
+      //   alert('You searched for ' + input1.value);
+      //   e.preventDefault();
+      // }
+
+      // input1.addEventListener('focus', function() {
+      //   if (input1.value === 'search here')
+      //     input1.value = '';
+      // });
+      //
+      // input1.addEventListener('blur', function() {
+      //   if (input1.value === '')
+      //     input1.value = 'search here';
+      // });
+
+    </script>
+
+  </body>
+</html>
